@@ -1,0 +1,7 @@
+.d-flex justify-content-between {
+    display: flex;
+    flex-direction: right;
+    height: 50px;
+    width: 400px;
+    font-size: 30px;
+}

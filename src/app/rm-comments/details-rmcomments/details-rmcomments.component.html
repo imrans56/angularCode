@@ -1,0 +1,47 @@
+<mat-toolbar class="d-flex justify-content-between">
+    <div>View</div>
+    <mat-icon [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+<div>
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input type="text" [(ngModel)]="stag.aspirationTitle" name="aspirationTitle" matInput
+            placeholder="aspirationTitle" required readonly="aspirationTitle">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Type</mat-label>
+        <input mat-input type="text" [(ngModel)]="stag.aspirationType" name="aspirationType" matInput
+            placeholder="AspirationType" required readonly="aspirationType">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>AspirationStatus</mat-label>
+        <input type="text" [(ngModel)]="stag.aspirationStatus" name="aspirationStatus" matInput
+            placeholder="AspirationStatus" required readonly="aspirationStatus">
+    </mat-form-field>
+
+    <table width="100%">
+        <tr>
+            <td>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>CreatedBy</mat-label>
+                    <input type="text" [(ngModel)]="stag.createdBy" name="createdBy" matInput placeholder="CreatedBy"
+                        required readonly="createdBy">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>RM Comments</mat-label>
+                    <input type="text" [(ngModel)]="stag.comments" name="comments" matInput placeholder="comments"
+                        required readonly="comments">
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+
+    <div class="text-center col-12">
+        <button class="my-button" [mat-dialog-close]="" mat-raised-button color="primary" (click)="getID(stag)">Back
+            to list</button>
+    </div>
+</div>

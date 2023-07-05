@@ -1,0 +1,64 @@
+<div class="page-header">
+  <div><h3>Aspiration List For BUHead</h3></div>
+  <mat-icon [mat-dialog-close]="">close</mat-icon>
+</div>
+
+<div>
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="a">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.id }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="b">
+      <th mat-header-cell *matHeaderCellDef>Aspiration Title</th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.title }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="c">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.description }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="d">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.type }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="e">
+      <th mat-header-cell *matHeaderCellDef> Aspiration Status </th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.status }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="f">
+      <th mat-header-cell *matHeaderCellDef> BU Approved </th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.buApproved }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="g">
+      <th mat-header-cell *matHeaderCellDef> BU FullFill </th>
+      <td mat-cell *matCellDef="let contact"> {{ contact.fullFillBy }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="h">
+      <th mat-header-cell *matHeaderCellDef> Add Comment </th>
+      <td mat-cell *matCellDef="let element">
+        <button class="my-button" mat-raised-button color="primary" 
+        (click)="addComment(element)">Add Comment</button>
+      </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="h">
+      <th mat-header-cell *matHeaderCellDef> Update Aspiration Status </th>
+      <td mat-cell *matCellDef="let element">
+        <button class="my-button" mat-raised-button color="primary" (click)="updateStatus(element)">Update Aspiration</button>
+      </td>
+    </ng-container> -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,24 @@
+.page-header{
+	background-color:blue; 
+	border-radius: 5px; 
+	color:white ;
+	padding: 10px;
+	margin-top: 7px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+  .my-button {
+    background-color:blue;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  

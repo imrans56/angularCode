@@ -1,0 +1,24 @@
+<mat-toolbar class="d-flex justify-content-between">
+    <div>Edit RM Comments</div>
+    <mat-icon  [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+<div>
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Aspiration Title</mat-label>
+        <input type="text" [(ngModel)]="stag.aspirationTitle" name="aspirationTitle" matInput placeholder="aspirationTitle"
+            disabled>
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>RM Comments</mat-label>
+        <textarea type="text" [(ngModel)]="stag.comments" name="comments" matInput placeholder="comments"
+            required></textarea>
+    </mat-form-field>
+    <h2>RM's View</h2>
+<mat-radio-group [(ngModel)]="stag.aspirationRMSApproved" aria-label="Select an option">
+ <mat-radio-button value="true">Recommend Further Review</mat-radio-button>
+     <mat-radio-button value="false">Doesnot Recommend Further Review</mat-radio-button>
+ </mat-radio-group>
+</div>
+<div class="text-center col-12">
+    <button mat-raised-button color="primary" (click)="update(stag)">Save</button>
+</div>

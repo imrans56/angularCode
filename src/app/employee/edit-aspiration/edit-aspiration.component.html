@@ -1,0 +1,32 @@
+<mat-toolbar class="d-flex justify-content-between">
+  <div> <b> Add Aspiration </b></div>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="page-header">
+  <form style="padding-top: 10px;" #addForm="ngForm">
+    <mat-form-field class="w-100" appearance="outline">
+      <h2> <mat-label>Title</mat-label> </h2>
+      <input [(ngModel)]="stag.title" type="text" name="title" matInput placeholder="Add Title" required maxlength="50">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <h2> <mat-label>Description</mat-label> </h2>
+      <input [(ngModel)]="stag.description" type="text" name="description" matInput placeholder="Add Description">
+    </mat-form-field>
+  </form>
+
+  <h2> <mat-label>Type</mat-label> </h2>
+  <mat-radio-group [(ngModel)]="stag.type" aria-label="Select an option" required maxlength="20">
+    <mat-radio-button value="Skill">Skill</mat-radio-button>
+    <mat-radio-button value="Roles">Roles</mat-radio-button>
+    <mat-radio-button value="Experience">Experience</mat-radio-button>
+    <mat-radio-button value="Others">Others</mat-radio-button>
+  </mat-radio-group>
+
+  <div class="text-center col-12">
+    <button mat-raised-button color="accent" [mat-dialog-close]="" (click)="update(stag)">Save</button>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<mat-toolbar class="d-flex justify-content-between">
+    <div>Add RM Comments</div>
+    <mat-icon [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+
+<table mat-table [dataSource]="[stag]" class="mat-elevation-z0">
+    <!-- <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Aspiration Id:</th>
+        <td mat-cell *matCellDef="let element" style="background-color: whitesmoke;">{{element.id}}</td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Aspiration Title:</th>
+        <td mat-cell *matCellDef="let element" style="background-color: whitesmoke;">{{element.title}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['title']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['title']"></tr>
+
+</table>
+
+<h4 class="style=color:red"></h4>
+<!-- <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Aspiration Id</mat-label>
+    <input [(ngModel)]="rm_comment.aspirationId" type="number" name="aspirationId" value="" matInput
+        placeholder="RM Comment">
+</mat-form-field> -->
+
+<h4>RM Comments</h4>
+<mat-form-field class="w-100" appearance="outline">
+    <mat-label>Comments</mat-label>
+    <textarea type="text" [(ngModel)]="rm_comment.comments" name="comments" matInput placeholder="comments"
+            required></textarea>
+</mat-form-field>
+
+<!-- <h2>RM's View</h2>
+<mat-radio-group [(ngModel)]="rm_comment.aspirationRMSApproved" aria-label="Select an option">
+    <mat-radio-button value=true>Recommend Further Review</mat-radio-button>
+    <mat-radio-button value=false>Doesnot Recommend Further Review</mat-radio-button>
+</mat-radio-group> -->
+<h2>RM's View</h2>
+<mat-radio-group [(ngModel)]="data1.rmsApproved" aria-label="Select an option">
+    <mat-radio-button value="true">Recommend Further Review</mat-radio-button>
+    <mat-radio-button value="false">Doesnot Recommend Further Review</mat-radio-button>
+</mat-radio-group>
+
+<div class="text-center col-12">
+    <button [mat-dialog-close]="" mat-raised-button color="primary" (click)="add(rm_comment)"
+    (click)="updateAspiration(data1)">Add</button>
+</div>

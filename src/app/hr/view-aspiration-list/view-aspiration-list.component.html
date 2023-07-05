@@ -1,0 +1,42 @@
+<mat-toolbar class="d-flex justify-content-between">
+  <div>Aspiration List</div>
+  <mat-icon  [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+
+   <div>
+    <table mat-table [dataSource]="dataSource">
+      <!--  Column -->
+      <ng-container matColumnDef="a">
+        <th mat-header-cell *matHeaderCellDef>Aspiration Title</th>
+        <td mat-cell *matCellDef="let contact">{{ contact.title }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="b">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let contact">{{ contact.description }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="c">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let contact">{{ contact.type }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="d">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let contact">{{ contact.status }}</td>
+      </ng-container>
+
+  
+     <ng-container matColumnDef="e">
+        <th mat-header-cell *matHeaderCellDef> Add Comment </th>
+        <td mat-cell *matCellDef="let element">        
+        <button mat-raised-button color="primary" (click)="add(element)">Add Comment</button>        
+         </td>       
+         </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  

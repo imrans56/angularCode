@@ -1,0 +1,30 @@
+<mat-toolbar class="d-flex justify-content-between">
+  <div>View Aspiration List</div>
+  <mat-icon [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+
+<div class="page-header">
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Title</mat-label>
+    <input type="text" [(ngModel)]="stag.title" name="title" matInput placeholder="Title" readonly>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Description</mat-label>
+    <input type="text" [(ngModel)]="stag.description" name="description" matInput placeholder="Description" readonly>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Status</mat-label>
+    <input type="text" [(ngModel)]="stag.status" name="status" matInput placeholder="Status" readonly>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Type</mat-label>
+    <input type="text" [(ngModel)]="stag.type" name="type" matInput placeholder="Type" readonly>
+  </mat-form-field>
+
+  <div class="text-center col-12">
+    <button [mat-dialog-close]="" mat-raised-button color="primary" (click)="getID(stag)">Back to View </button>
+  </div>
+</div>

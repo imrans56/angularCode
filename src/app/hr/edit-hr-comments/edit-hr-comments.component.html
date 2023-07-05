@@ -1,0 +1,14 @@
+<mat-toolbar class="d-flex justify-content-between" style="overflow: hidden; width: 600px;">
+    <div>Edit Comments</div>
+    <mat-icon [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar><br>
+<div>
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label> HR comments </mat-label>
+        <textarea type="text" [(ngModel)]="stag.comments" name="comments" matInput placeholder=" Edit Comments"></textarea>
+    </mat-form-field>
+
+    <div class="text-center col-12"  style="overflow: hidden;">
+        <button mat-raised-button color="primary" (click)="update(stag)">Save</button>
+    </div>
+</div>

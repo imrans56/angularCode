@@ -1,0 +1,27 @@
+<mat-toolbar class="d-flex justify-content-between">
+    <div>Edit Comments</div>
+    <mat-icon [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+<div>
+
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label> BU comments </mat-label>
+        <input type="text" [(ngModel)]="stag.comments" name="comments" matInput placeholder=" Edit Comments">
+    </mat-form-field>
+
+    <h4>Bu Head's Comments</h4>
+    <label>BU Head's Comment</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="stag.aspirationBUApproved">
+        <mat-radio-button class="example-radio-button" [value]="true">
+            Accepted
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" [value]="false">
+            Rejected
+        </mat-radio-button>
+    </mat-radio-group>
+
+
+    <div class="text-center col-12">
+        <button mat-raised-button color="primary" (click)="update(stag)">Save</button>
+    </div>

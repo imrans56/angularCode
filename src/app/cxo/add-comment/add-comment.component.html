@@ -1,0 +1,25 @@
+<mat-toolbar class="d-flex justify-content-between">
+ <div>Add CXO Comments</div>
+<mat-icon [mat-dialog-close]="">close</mat-icon>
+</mat-toolbar>
+<table mat-table [dataSource]="[stag]" class="mat-elevation-z0">
+<ng-container matColumnDef="title">
+<th mat-header-cell *matHeaderCellDef>Aspiration Title</th>
+<td mat-cell *matCellDef="let element" style="background-color: whitesmoke;">{{element.title}}</td>
+ </ng-container>
+<ng-container matColumnDef="description">
+<th mat-header-cell *matHeaderCellDef>Aspiration Description:</th>
+<td mat-cell *matCellDef="let element" style="background-color: whitesmoke;">{{element.description}}</td>
+</ng-container>
+    <tr mat-header-row *matHeaderRowDef="['title','description']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['title','description']"></tr>
+</table>
+<h4 class="style=color:red"></h4>
+<h4>CXO Comments</h4>
+<mat-form-field class="w-100" appearance="outline">
+    <mat-label>Comments</mat-label>
+<input [(ngModel)]="cxo_comment.comments" type="text" name="comments" matInput placeholder="CXO Comment">
+</mat-form-field>
+<div class="text-center col-12">
+<button [mat-dialog-close]="" mat-raised-button color="primary" (click)="add(cxo_comment)">Add</button>
+</div>
